@@ -1,0 +1,303 @@
+/* ===== MODERN EFFECTS & DECORATIONS ===== */
+
+/* Decorative elements with dotted borders */
+.text-center {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.text-center::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 4px, transparent 4px, transparent 8px);
+    border-radius: 1px;
+}
+
+/* Enhanced links with underline effect */
+section a[href]:not(.btn) {
+    position: relative;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+section a[href]:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+section a[href]:not(.btn):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Image placeholders with modern style */
+section div[style*="background: var(--light)"] {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px dashed rgba(32, 83, 149, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+section div[style*="background: var(--light)"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 3s infinite;
+}
+
+section div[style*="background: #e2e8f0"] {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border: 2px dashed rgba(32, 83, 149, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+section div[style*="background: #e2e8f0"]:hover {
+    box-shadow: 0 8px 20px rgba(32, 83, 149, 0.15);
+    border-color: rgba(255, 117, 31, 0.2);
+}
+
+section div[style*="background: #e2e8f0"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+/* Paragraph styling enhancement */
+p {
+    position: relative;
+}
+
+/* Enhanced section backgrounds */
+section[style*="background: var(--light-secondary)"] {
+    position: relative;
+    background: linear-gradient(180deg, var(--light-secondary) 0%, #e8f0f7 100%);
+}
+
+section[style*="background: var(--light-secondary)"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 117, 31, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(32, 83, 149, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Enhanced gradient sections */
+section[style*="gradient-primary"] {
+    position: relative;
+    background: linear-gradient(135deg, #205395 0%, #153a6a 100%);
+    background-size: 200% 200%;
+    animation: rotateGradient 10s ease infinite;
+}
+
+section[style*="gradient-primary"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="dots-white" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots-white)"/></svg>');
+    opacity: 0.6;
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Title animations */
+h2, h3, h4, h5 {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+/* Card content paragraphs */
+.card p {
+    transition: color 0.3s ease;
+}
+
+.card:hover p {
+    color: #475569;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Dotted dividers */
+hr {
+    border: none;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 6px, transparent 6px, transparent 12px);
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+/* List styling enhancement */
+ul li, ol li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Quote or highlight styling */
+blockquote {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px dashed var(--accent);
+    font-style: italic;
+    color: var(--gray);
+}
+
+blockquote::before {
+    content: '"';
+    position: absolute;
+    left: -0.5rem;
+    top: -0.5rem;
+    font-size: 2rem;
+    color: var(--accent);
+    opacity: 0.3;
+}
+
+/* Badge or tag styling */
+.badge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    background: rgba(255, 117, 31, 0.1);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px dashed var(--accent);
+    transition: var(--transition);
+}
+
+.badge:hover {
+    background: rgba(255, 117, 31, 0.2);
+    transform: scale(1.05);
+}
+
+/* Tooltip styling */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted var(--accent);
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark);
+    color: white;
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading animation */
+@keyframes pulse-scale {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.loading {
+    animation: pulse-scale 2s infinite;
+}
+
+/* Smooth scroll behavior for internal links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus {
+    outline: 2px dashed var(--accent);
+    outline-offset: 2px;
+}
+
+/* Text selection styling */
+::selection {
+    background: var(--accent);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--accent);
+    color: white;
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-light), var(--primary-light));
+}
+
+/* Input focus styling */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 117, 31, 0.1);
+}

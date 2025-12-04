@@ -7,179 +7,231 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/style.css">
     
     <style>
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            animation: fadeIn 0.3s;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
         }
 
-        .lightbox.active { display: flex; align-items: center; justify-content: center; }
-
-        .lightbox-content {
+        .gallery-item {
             position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-        }
-
-        .lightbox img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 40px;
-            color: white;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            aspect-ratio: 1;
             cursor: pointer;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-standard);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(32, 83, 149, 0.7);
+            opacity: 0;
+            transition: opacity var(--transition-standard);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity var(--transition-standard);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- === HEADER === -->
-    <header id="header">
+    <!-- ===== HEADER ===== -->
+    <header>
         <div class="container nav-container">
             <a href="../index.html" class="logo">MOCS<span>.</span></a>
             
             <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="historia.html">História</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="galeria.html" class="active">Galeria</a></li>
-                    <li><a href="noticias.html">Notícias</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="historia.html" class="nav-link">História</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                    <li><a href="galeria.html" class="nav-link active">Galeria</a></li>
+                    <li><a href="noticias.html" class="nav-link">Notícias</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-
-            <div class="mobile-toggle" onclick="toggleMenu()">
-                <i class="bi bi-list"></i>
-            </div>
+            
+            <button class="nav-toggle" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- === HERO === -->
-    <section style="height: 60vh; background: linear-gradient(135deg, rgba(32, 83, 149, 0.9), rgba(21, 58, 106, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; text-align: center; color: white; padding-top: 80px; margin-bottom: 60px;">
-        <div class="container">
-            <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Galeria</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Momentos memoráveis do MOCS</p>
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="margin-top: 80px; min-height: 50vh; padding: 6rem 0;">
+        <div class="hero-content">
+            <h1>Galeria de Fotos</h1>
+            <p>Reviva os momentos marcantes do MOCS</p>
         </div>
     </section>
 
-    <!-- === GALERIA === -->
-    <section id="galeria-section" class="section-padding page-section">
+    <!-- ===== GALERIA ===== -->
+    <main class="section">
         <div class="container">
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 1">
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Simulação 2024</h4>
+                        <p style="font-size: 0.9rem;">Momento de pura delegação</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 2">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Workshop</h4>
+                        <p style="font-size: 0.9rem;">Aprendizado coletivo</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 3">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #f5d5d5 0%, #e8b4b4 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Encerramento</h4>
+                        <p style="font-size: 0.9rem;">Celebrando conquistas</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 4">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Reunião Preparatória</h4>
+                        <p style="font-size: 0.9rem;">Estratégia e planejamento</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 5">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Painel de Discussão</h4>
+                        <p style="font-size: 0.9rem;">Vozes e perspectivas</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1475721027767-p753c96d996c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1475721027767-p753c96d996c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 6">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Negociação Intensa</h4>
+                        <p style="font-size: 0.9rem;">Diplomacia em ação</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 7">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #e7d4f5 0%, #d1b3e8 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Cerimônia de Abertura</h4>
+                        <p style="font-size: 0.9rem;">Início do espetáculo</p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 8">
+
+                <div class="gallery-item">
+                    <div style="height: 100%; background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);"></div>
+                    <div class="gallery-overlay">
+                        <h4>Atividade Social</h4>
+                        <p style="font-size: 0.9rem;">Conexões além da delegação</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- === LIGHTBOX === -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="">
-        </div>
-    </div>
-
-    <!-- === FOOTER === -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 style="color: var(--color-orange);">MOCS.</h4>
-                    <p>Modelo de Comitês Simulados do CEFET-MG.</p>
-                    <p>Desde 2010 formando líderes.</p>
+                    <h4>MOCS CEFET-MG</h4>
+                    <p>Modelo de Comitês Simulados. Formando cidadãos globais desde 2010.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
                         <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="historia.html">História</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
                         <li><a href="equipe.html">Equipe</a></li>
-                        <li><a href="noticias.html">Notícias</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Links Úteis</h4>
                     <ul>
-                        <li><a href="#">Edital 2025</a></li>
-                        <li><a href="#">Guia de Estudos</a></li>
-                        <li><a href="#">Regras de Procedimento</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:contato@mocs.com.br">contato@mocs.com.br</a></li>
+                        <li><a href="tel:+5531999999999">(31) 9999-9999</a></li>
+                        <li>Belo Horizonte - MG</li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
+            
+            <div class="footer-bottom">
                 <p>&copy; 2025 MOCS CEFET-MG. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        function openLightbox(imageSrc) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = imageSrc;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-    </script>
-
     <script src="../js/sheets.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

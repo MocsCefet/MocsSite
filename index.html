@@ -5,252 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOCS - Modelo de Comitês Simulados CEFET-MG</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- === HEADER === -->
-    <header id="header">
+    <!-- ===== HEADER ===== -->
+    <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">MOCS<span>.</span></a>
             
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="pages/sobre.html">Sobre</a></li>
-                    <li><a href="pages/historia.html">História</a></li>
-                    <li><a href="pages/equipe.html">Equipe</a></li>
-                    <li><a href="pages/servicos.html">Serviços</a></li>
-                    <li><a href="pages/galeria.html">Galeria</a></li>
-                    <li><a href="pages/noticias.html">Notícias</a></li>
-                    <li><a href="pages/contato.html">Contato</a></li>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="pages/sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="pages/historia.html" class="nav-link">História</a></li>
+                    <li><a href="pages/equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="pages/servicos.html" class="nav-link">Serviços</a></li>
+                    <li><a href="pages/galeria.html" class="nav-link">Galeria</a></li>
+                    <li><a href="pages/noticias.html" class="nav-link">Notícias</a></li>
+                    <li><a href="pages/contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-
-            <div class="mobile-toggle" onclick="toggleMenu()">
-                <i class="bi bi-list"></i>
-            </div>
+            
+            <button class="nav-toggle" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- === HOME HERO === -->
-    <section id="home" class="hero-section">
-        <div class="container hero-content">
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
             <h1>Diplomacia para todos.</h1>
-            <p>Formando cidadãos globais através do debate, da oratória e da educação pública.<br>Conectando o CEFET-MG ao mundo desde 2010.</p>
-            <div class="hero-buttons">
-                <a href="pages/contato.html" class="btn btn-primary">Participe do MOCS 2025</a>
-                <a href="#sobre" class="btn btn-outline" style="margin-left: 15px;">Saiba Mais</a>
+            <p>Formando cidadãos globais através do debate, da oratória e da educação pública. Conectando o CEFET-MG ao mundo desde 2010.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="pages/contato.html" class="btn btn-primary btn-lg">Participe Agora</a>
+                <a href="pages/sobre.html" class="btn btn-outline btn-lg">Saiba Mais</a>
             </div>
         </div>
     </section>
 
-    <!-- === SOBRE === -->
-    <section id="sobre" class="section-padding">
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="text-center" style="margin-bottom: 3rem;">
                 <h2>Quem Somos</h2>
+                <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 1rem auto 0;">O MOCS é um projeto de extensão do CEFET-MG que busca democratizar o acesso à educação em diplomacia e relações internacionais.</p>
             </div>
-
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Democratizando a diplomacia</h3>
-                    <p>O <strong>MOCS (Modelo de Comitês Simulados)</strong> é um projeto de extensão do CEFET-MG que busca levar a experiência das simulações da ONU para estudantes de escolas públicas.</p>
-                    <p>Nossa missão é desenvolver o pensamento crítico, a oratória e a consciência geopolítica. Acreditamos que o acesso a este tipo de conhecimento não deve ser elitizado, mas sim um direito de todos.</p>
-                    <a href="pages/sobre.html" style="color: var(--color-orange); font-weight: 700;">Conheça nossa trajetória &rarr;</a>
+            
+            <div class="grid grid-2" style="align-items: center;">
+                <div>
+                    <h3>Nossa Missão</h3>
+                    <p>Desenvolver o pensamento crítico, a oratória e a consciência geopolítica entre estudantes de escolas públicas.</p>
+                    <p>Acreditamos que o acesso a este conhecimento não deve ser elitizado, mas um direito de todos.</p>
+                    <a href="pages/sobre.html" style="font-weight: 600; color: var(--accent);">Conheça nossa trajetória →</a>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Debate e Diplomacia" style="border-radius: 10px; box-shadow: var(--shadow-card);">
+                <div style="text-align: center;">
+                    <div style="background: var(--light); height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: #cbd5e1;">
+                        [Imagem]
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="values-cards">
-                <div class="value-card">
-                    <i class="bi bi-globe-americas"></i>
+    <!-- ===== VALORES ===== -->
+    <section class="section" style="background: var(--light-secondary);">
+        <div class="container">
+            <h2 class="section-title">Nossos Valores</h2>
+            
+            <div class="grid grid-3">
+                <div class="card">
                     <h4>Diplomacia</h4>
                     <p>Simulação realista de comitês internacionais e debates de alto nível.</p>
                 </div>
-                <div class="value-card">
-                    <i class="bi bi-people-fill"></i>
+                <div class="card">
                     <h4>Cidadania</h4>
                     <p>Formação de cidadãos conscientes, críticos e politicamente ativos.</p>
                 </div>
-                <div class="value-card">
-                    <i class="bi bi-mortarboard-fill"></i>
+                <div class="card">
                     <h4>Educação Pública</h4>
-                    <p>Excelência acadêmica gratuita e acessível para a comunidade.</p>
+                    <p>Excelência acadêmica gratuita e acessível para toda comunidade.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- === HISTÓRIA === -->
-    <section id="historia" class="section-padding">
+    <!-- ===== SERVIÇOS ===== -->
+    <section id="servicos" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Nossa História</h2>
-            </div>
+            <h2 class="section-title">O Que Fazemos</h2>
             
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year">2010</span>
-                        <h4>Fundação</h4>
-                        <p>Início do projeto no CEFET-MG, criado por alunos apaixonados por geopolítica.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year">2015</span>
-                        <h4>Expansão Regional</h4>
-                        <p>O MOCS recebe suas primeiras delegações de outras escolas de Belo Horizonte.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year">2019</span>
-                        <h4>MOCS em Sala</h4>
-                        <p>Criação da modalidade interna para treinamento exclusivo de novatos.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year">2025</span>
-                        <h4>MOCS XII</h4>
-                        <p>Edição histórica projetada para mais de 200 delegados e 5 comitês simultâneos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- === SERVIÇOS === -->
-    <section id="servicos" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>O que fazemos</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3><i class="bi bi-mic-fill" style="color: var(--color-orange);"></i> Simulações (MUNs)</h3>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4>Simulações (MUNs)</h4>
                     <p>Organização completa de Modelos das Nações Unidas, desde a parte acadêmica até a logística.</p>
                 </div>
-                <div class="service-card">
-                    <h3><i class="bi bi-easel-fill" style="color: var(--color-orange);"></i> Workshops</h3>
+                <div class="card">
+                    <h4>Workshops</h4>
                     <p>Oficinas de oratória, negociação e regras de procedimento para escolas parceiras.</p>
                 </div>
-                <div class="service-card">
-                    <h3><i class="bi bi-person-video3" style="color: var(--color-orange);"></i> Mentorias</h3>
+                <div class="card">
+                    <h4>Mentorias</h4>
                     <p>Acompanhamento para Grêmios e Clubes de Relações Internacionais em formação.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- === GALERIA === -->
-    <section id="galeria" class="section-padding" style="background-color: var(--color-gray-light);">
+    <!-- ===== GALERIA ===== -->
+    <section id="galeria" class="section" style="background: var(--light-secondary);">
         <div class="container">
-            <div class="section-title">
-                <h2>Galeria</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 1"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 2"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 3"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galeria 4"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- === EQUIPE === -->
-    <section id="equipe" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossa Equipe</h2>
-                <p style="margin-top: -40px; color: #666; font-size: 0.9rem;">Quem faz o MOCS acontecer</p>
-            </div>
+            <h2 class="section-title">Galeria</h2>
             
-            <div id="team-container" class="team-grid">
-                <div class="team-member skeleton" style="height: 300px;"></div>
-                <div class="team-member skeleton" style="height: 300px;"></div>
-                <div class="team-member skeleton" style="height: 300px;"></div>
-                <div class="team-member skeleton" style="height: 300px;"></div>
+            <div class="grid grid-4" style="gap: 1.5rem;">
+                <div style="height: 300px; background: #e2e8f0; border-radius: var(--radius-lg);"></div>
+                <div style="height: 300px; background: #e2e8f0; border-radius: var(--radius-lg);"></div>
+                <div style="height: 300px; background: #e2e8f0; border-radius: var(--radius-lg);"></div>
+                <div style="height: 300px; background: #e2e8f0; border-radius: var(--radius-lg);"></div>
             </div>
         </div>
     </section>
 
-    <!-- === NOTÍCIAS === -->
-    <section id="noticias" class="section-padding" style="background-color: var(--color-gray-light);">
+    <!-- ===== EQUIPE ===== -->
+    <section id="equipe" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Últimas Notícias</h2>
-            </div>
-            <div id="news-container" class="news-grid">
-                <div class="news-card skeleton" style="height: 400px;"></div>
-                <div class="news-card skeleton" style="height: 400px;"></div>
-                <div class="news-card skeleton" style="height: 400px;"></div>
+            <h2 class="section-title">Nossa Equipe</h2>
+            
+            <div class="grid grid-4" id="teamContainer">
+                <div class="card" style="text-align: center;">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <h4>Membro 1</h4>
+                    <p style="color: var(--accent);">Posição</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <h4>Membro 2</h4>
+                    <p style="color: var(--accent);">Posição</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <h4>Membro 3</h4>
+                    <p style="color: var(--accent);">Posição</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <h4>Membro 4</h4>
+                    <p style="color: var(--accent);">Posição</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- === PARCEIROS === -->
-    <section id="parceiros" class="section-padding">
+    <!-- ===== NOTÍCIAS ===== -->
+    <section id="noticias" class="section" style="background: var(--light-secondary);">
         <div class="container">
-            <div class="section-title">
-                <h2>Parceiros Institucionais</h2>
-            </div>
-            <div id="partners-container" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.7;">
-                <h3 style="color: #ccc;">CEFET-MG</h3>
-                <h3 style="color: #ccc;">DIPLOMACIA CIVIL</h3>
-                <h3 style="color: #ccc;">ONU BRASIL</h3>
+            <h2 class="section-title">Últimas Notícias</h2>
+            
+            <div class="grid grid-3" id="newsContainer">
+                <div class="card">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <p style="font-size: 0.875rem; color: var(--accent); font-weight: 600;">DATA</p>
+                    <h4>Título da Notícia</h4>
+                    <p>Descrição breve da notícia aparece aqui.</p>
+                </div>
+                <div class="card">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <p style="font-size: 0.875rem; color: var(--accent); font-weight: 600;">DATA</p>
+                    <h4>Título da Notícia</h4>
+                    <p>Descrição breve da notícia aparece aqui.</p>
+                </div>
+                <div class="card">
+                    <div style="height: 200px; background: #e2e8f0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);"></div>
+                    <p style="font-size: 0.875rem; color: var(--accent); font-weight: 600;">DATA</p>
+                    <h4>Título da Notícia</h4>
+                    <p>Descrição breve da notícia aparece aqui.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- === FOOTER === -->
+    <!-- ===== CTA ===== -->
+    <section class="section" style="background: var(--gradient-primary); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Quer Participar do MOCS?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-bottom: 2rem;">Confira nossos próximos eventos e inscreva-se agora.</p>
+            <a href="pages/contato.html" class="btn btn-primary btn-lg" style="background: white; color: var(--primary);">Entrar em Contato</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 style="color: var(--color-orange);">MOCS.</h4>
-                    <p>Modelo de Comitês Simulados do CEFET-MG.</p>
-                    <p>Desde 2010 formando líderes.</p>
+                    <h4>MOCS CEFET-MG</h4>
+                    <p>Modelo de Comitês Simulados. Formando cidadãos globais desde 2010.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="pages/sobre.html">Sobre</a></li>
+                        <li><a href="pages/historia.html">História</a></li>
+                        <li><a href="pages/servicos.html">Serviços</a></li>
                         <li><a href="pages/equipe.html">Equipe</a></li>
-                        <li><a href="pages/noticias.html">Notícias</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Links Úteis</h4>
                     <ul>
-                        <li><a href="#">Edital 2025</a></li>
-                        <li><a href="#">Guia de Estudos</a></li>
-                        <li><a href="#">Regras de Procedimento</a></li>
+                        <li><a href="pages/galeria.html">Galeria</a></li>
+                        <li><a href="pages/noticias.html">Notícias</a></li>
+                        <li><a href="pages/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:contato@mocs.com.br">contato@mocs.com.br</a></li>
+                        <li><a href="tel:+5531999999999">(31) 9999-9999</a></li>
+                        <li>Belo Horizonte - MG</li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
+            
+            <div class="footer-bottom">
                 <p>&copy; 2025 MOCS CEFET-MG. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/sheets.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

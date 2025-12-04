@@ -7,200 +7,263 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all var(--transition-standard);
+            background: var(--bg-light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(32, 83, 149, 0.1);
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .contact-card {
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(32, 83, 149, 0.05) 0%, rgba(255, 117, 31, 0.05) 100%);
+            border: 1px solid rgba(32, 83, 149, 0.1);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .contact-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition-standard);
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+    </style>
 </head>
 <body>
-
-    <!-- === HEADER === -->
-    <header id="header">
+    <!-- ===== HEADER ===== -->
+    <header>
         <div class="container nav-container">
             <a href="../index.html" class="logo">MOCS<span>.</span></a>
             
             <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="historia.html">História</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="noticias.html">Notícias</a></li>
-                    <li><a href="contato.html" class="active">Contato</a></li>
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="historia.html" class="nav-link">História</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                    <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+                    <li><a href="noticias.html" class="nav-link">Notícias</a></li>
+                    <li><a href="contato.html" class="nav-link active">Contato</a></li>
                 </ul>
             </nav>
-
-            <div class="mobile-toggle" onclick="toggleMenu()">
-                <i class="bi bi-list"></i>
-            </div>
+            
+            <button class="nav-toggle" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- === HERO === -->
-    <section style="height: 60vh; background: linear-gradient(135deg, rgba(32, 83, 149, 0.9), rgba(21, 58, 106, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; text-align: center; color: white; padding-top: 80px; margin-bottom: 60px;">
-        <div class="container">
-            <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Entre em Contato</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Estamos aqui para responder suas dúvidas</p>
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="margin-top: 80px; min-height: 50vh; padding: 6rem 0;">
+        <div class="hero-content">
+            <h1>Entre em Contato</h1>
+            <p>Estamos aqui para responder suas dúvidas e ouvir suas sugestões</p>
         </div>
     </section>
 
-    <!-- === CONTATO & INTERESSE === -->
-    <section id="contato" class="section-padding page-section">
+    <!-- ===== CONTATO ===== -->
+    <main class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Fale Conosco</h2>
-            </div>
-            
-            <div class="contact-wrapper">
-                <!-- Info -->
-                <div class="contact-info">
-                    <h3>Entre em contato</h3>
-                    <div class="info-item">
-                        <i class="bi bi-envelope-fill"></i>
-                        <span>contato@mocscefet.com.br</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <span>Av. Amazonas, 5253 - Nova Suíça<br>Belo Horizonte - MG, 30140-071</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="bi bi-phone-fill"></i>
-                        <span>+55 (31) 3319-7800</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="bi bi-instagram"></i>
-                        <span>@mocscefet</span>
-                    </div>
-                    
-                    <div style="margin-top: 40px;">
-                        <h4 style="color: white; margin-bottom: 15px;">Horário de Atendimento</h4>
-                        <p style="opacity: 0.8;">Segunda a sexta: 09:00 - 17:00<br>Sábado: 09:00 - 13:00</p>
-                    </div>
-
-                    <div style="margin-top: 40px;">
-                        <h4 style="color: white; margin-bottom: 15px;">Encontre-nos</h4>
-                        <p style="opacity: 0.8;">Campus I do CEFET-MG<br>Prédio das Engenharias<br>Sala 215</p>
-                    </div>
+            <!-- ===== INFORMAÇÕES DE CONTATO ===== -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto 1rem;">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <h4>Telefone</h4>
+                    <p><a href="tel:+5531999999999">(31) 9999-9999</a></p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Segunda a Sexta, 9h às 18h</p>
                 </div>
 
-                <!-- Form -->
-                <div class="contact-form">
-                    <form onsubmit="handleFormSubmit(event)">
+                <div class="contact-card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto 1rem;">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                    <h4>Email</h4>
+                    <p><a href="mailto:contato@mocs.com.br">contato@mocs.com.br</a></p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Responderemos em até 24h</p>
+                </div>
+
+                <div class="contact-card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto 1rem;">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <h4>Endereço</h4>
+                    <p>Belo Horizonte - MG</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">CEFET-MG Campus I</p>
+                </div>
+            </div>
+
+            <!-- ===== FORMULÁRIO ===== -->
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Seu Nome Completo" required>
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Seu E-mail" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Seu Telefone (opcional)">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Sua Escola/Instituição (opcional)">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" required>
-                                <option value="" disabled selected>Assunto / Interesse</option>
-                                <option value="duvida">Dúvida Geral</option>
-                                <option value="equipe">Quero fazer parte da Equipe (Staff)</option>
-                                <option value="diretor">Quero ser Diretor de Comitê</option>
-                                <option value="delegado">Quero ser Delegado</option>
-                                <option value="escola">Parceria com minha Escola</option>
-                                <option value="workshop">Solicitar Workshop</option>
-                                <option value="consultoria">Solicitar Consultoria</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" placeholder="Sua Mensagem" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
-                    </form>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                </form>
+            </div>
+
+            <!-- ===== REDES SOCIAIS ===== -->
+            <div style="margin-top: 6rem; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, rgba(32, 83, 149, 0.05) 0%, rgba(255, 117, 31, 0.05) 100%); border-radius: var(--radius-xl);">
+                <h3 style="margin-bottom: 2rem;">Siga-nos nas Redes Sociais</h3>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; text-decoration: none; transition: transform var(--transition-standard);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); color: white; text-decoration: none; transition: transform var(--transition-standard);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 002.856-3.515 10 10 0 01-2.856.17 10 10 0 00-8.687-3.5c-4.967 0-9 4.02-9 9 0 .72.04 1.42.12 2.1A14.922 14.922 0 012.1 4.1a10 10 0 003.141 13.29 10.788 10.788 0 01-2.212-.1v.1c0 4.763 3.404 8.713 7.917 9.6a10.04 10.04 0 002.8.38 10 10 0 002.798-.384c2.887 4.218 6.638 4.613 7.917 4.6 4.513 0 7.917-3.927 7.917-9.6 0-.41-.023-.82-.067-1.226A14.924 14.924 0 0023.953 4.57z"/>
+                        </svg>
+                    </a>
+                    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; text-decoration: none; transition: transform var(--transition-standard);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.733 0-9.637h3.554v1.364c.425-.654 1.185-1.586 2.882-1.586 2.105 0 3.684 1.375 3.684 4.33l.001 5.529zM5.337 5.67a2.062 2.062 0 01-2.063-2.065c0-1.138.925-2.063 2.063-2.063 1.139 0 2.064.925 2.064 2.063 0 1.14-.925 2.065-2.064 2.065zm1.782 14.782H3.555V11.815h3.564v8.637zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                        </svg>
+                    </a>
+                    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); color: white; text-decoration: none; transition: transform var(--transition-standard);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16.5 7c0 1.933-1.567 3.5-3.5 3.5S9.5 8.933 9.5 7s1.567-3.5 3.5-3.5 3.5 1.567 3.5 3.5z" fill="white"/>
+                            <circle cx="12" cy="14" r="3" fill="white"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- === FAQ === -->
-    <section class="section-padding" style="background-color: var(--color-gray-light);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Perguntas Frequentes</h2>
-            </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
-                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
-                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Como participar como delegado?
-                    </h4>
-                    <p style="color: #666;">Você pode se inscrever através do formulário de interesse ou entrar em contato conosco. Realizamos seleção anual para participantes.</p>
-                </div>
-
-                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
-                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
-                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Qual é o custo para participar?
-                    </h4>
-                    <p style="color: #666;">As simulações para alunos de escolas públicas são totalmente gratuitas. Workshops e consultorias têm valores específicos que compartilharemos sob demanda.</p>
-                </div>
-
-                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
-                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
-                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Como faço para levar o MOCS para minha escola?
-                    </h4>
-                    <p style="color: #666;">Entramos em contato com escolas interessadas para discutir parcerias. Podemos realizar workshops, mentorias ou simulações customizadas.</p>
-                </div>
-
-                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
-                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
-                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Preciso ter conhecimento anterior em diplomacia?
-                    </h4>
-                    <p style="color: #666;">Não! O MOCS acolhe participantes de todos os níveis. Oferecemos treinamento completo para iniciantes.</p>
-                </div>
-
-                <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: var(--shadow-card);">
-                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
-                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Como posso ser voluntário ou estagiário?
-                    </h4>
-                    <p style="color: #666;">Procure pela aba "Equipe" no site e manifeste interesse. Estamos sempre buscando novos talentos para ajudar na missão do MOCS.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- === FOOTER === -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 style="color: var(--color-orange);">MOCS.</h4>
-                    <p>Modelo de Comitês Simulados do CEFET-MG.</p>
-                    <p>Desde 2010 formando líderes.</p>
+                    <h4>MOCS CEFET-MG</h4>
+                    <p>Modelo de Comitês Simulados. Formando cidadãos globais desde 2010.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
                         <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="historia.html">História</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
                         <li><a href="equipe.html">Equipe</a></li>
-                        <li><a href="noticias.html">Notícias</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Links Úteis</h4>
                     <ul>
-                        <li><a href="#">Edital 2025</a></li>
-                        <li><a href="#">Guia de Estudos</a></li>
-                        <li><a href="#">Regras de Procedimento</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:contato@mocs.com.br">contato@mocs.com.br</a></li>
+                        <li><a href="tel:+5531999999999">(31) 9999-9999</a></li>
+                        <li>Belo Horizonte - MG</li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
+            
+            <div class="footer-bottom">
                 <p>&copy; 2025 MOCS CEFET-MG. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script src="../js/sheets.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

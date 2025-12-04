@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe - MOCS CEFET-MG</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- === HEADER === -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MOCS<span>.</span></a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="historia.html">História</a></li>
+                    <li><a href="equipe.html" class="active">Equipe</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- === HERO === -->
+    <section style="height: 60vh; background: linear-gradient(135deg, rgba(32, 83, 149, 0.9), rgba(21, 58, 106, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; text-align: center; color: white; padding-top: 80px; margin-bottom: 60px;">
+        <div class="container">
+            <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Nossa Equipe</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Pessoas dedicadas a transformar vidas através da educação</p>
+        </div>
+    </section>
+
+    <!-- === EQUIPE DINÂMICA === -->
+    <section id="equipe-section" class="section-padding page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Liderança</h2>
+                <p style="margin-top: -40px; color: #666; font-size: 0.9rem;">Quem faz o MOCS acontecer</p>
+            </div>
+            
+            <div id="team-container" class="team-grid">
+                <div class="team-member skeleton" style="height: 300px;"></div>
+                <div class="team-member skeleton" style="height: 300px;"></div>
+                <div class="team-member skeleton" style="height: 300px;"></div>
+                <div class="team-member skeleton" style="height: 300px;"></div>
+                <div class="team-member skeleton" style="height: 300px;"></div>
+                <div class="team-member skeleton" style="height: 300px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === COMO FAZER PARTE === -->
+    <section class="section-padding" style="background-color: var(--color-gray-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Faça Parte da Equipe</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
+                <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: var(--shadow-card);">
+                    <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                        <i class="bi bi-person-check" style="font-size: 2.5rem; display: block; margin-bottom: 15px;"></i> Secretária Geral
+                    </h3>
+                    <p style="color: #666;">Responsável geral pelo projeto, tomando decisões estratégicas e representando o MOCS institucionalmente.</p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: var(--shadow-card);">
+                    <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                        <i class="bi bi-book" style="font-size: 2.5rem; display: block; margin-bottom: 15px;"></i> Diretor Acadêmico
+                    </h3>
+                    <p style="color: #666;">Coordena a parte pedagógica, comitês temáticos e treinamento de delegados.</p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: var(--shadow-card);">
+                    <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                        <i class="bi bi-megaphone" style="font-size: 2.5rem; display: block; margin-bottom: 15px;"></i> Diretor de Comunicação
+                    </h3>
+                    <p style="color: #666;">Gerencia redes sociais, campanhas de divulgação e relacionamento com a mídia.</p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: var(--shadow-card);">
+                    <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                        <i class="bi bi-hammer" style="font-size: 2.5rem; display: block; margin-bottom: 15px;"></i> Diretor de Logística
+                    </h3>
+                    <p style="color: #666;">Organiza eventos, coordena espaço físico e infraestrutura das simulações.</p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: var(--shadow-card);">
+                    <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                        <i class="bi bi-people" style="font-size: 2.5rem; display: block; margin-bottom: 15px;"></i> Diretor de RH
+                    </h3>
+                    <p style="color: #666;">Gerencia a equipe, recrutamento de novos membros e desenvolvimento de pessoas.</p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: var(--shadow-card);">
+                    <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                        <i class="bi bi-mic-fill" style="font-size: 2.5rem; display: block; margin-bottom: 15px;"></i> Diretor de Comitê
+                    </h3>
+                    <p style="color: #666;">Coordena comitês temáticos durante as simulações, moderando debates e discussões.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="contato.html" class="btn btn-primary">Quero Fazer Parte!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="color: var(--color-orange);">MOCS.</h4>
+                    <p>Modelo de Comitês Simulados do CEFET-MG.</p>
+                    <p>Desde 2010 formando líderes.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Edital 2025</a></li>
+                        <li><a href="#">Guia de Estudos</a></li>
+                        <li><a href="#">Regras de Procedimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MOCS CEFET-MG. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/sheets.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

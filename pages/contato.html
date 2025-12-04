@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - MOCS CEFET-MG</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- === HEADER === -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MOCS<span>.</span></a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="historia.html">História</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- === HERO === -->
+    <section style="height: 60vh; background: linear-gradient(135deg, rgba(32, 83, 149, 0.9), rgba(21, 58, 106, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; text-align: center; color: white; padding-top: 80px; margin-bottom: 60px;">
+        <div class="container">
+            <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Entre em Contato</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Estamos aqui para responder suas dúvidas</p>
+        </div>
+    </section>
+
+    <!-- === CONTATO & INTERESSE === -->
+    <section id="contato" class="section-padding page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fale Conosco</h2>
+            </div>
+            
+            <div class="contact-wrapper">
+                <!-- Info -->
+                <div class="contact-info">
+                    <h3>Entre em contato</h3>
+                    <div class="info-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>contato@mocscefet.com.br</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Av. Amazonas, 5253 - Nova Suíça<br>Belo Horizonte - MG, 30140-071</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-phone-fill"></i>
+                        <span>+55 (31) 3319-7800</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-instagram"></i>
+                        <span>@mocscefet</span>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <h4 style="color: white; margin-bottom: 15px;">Horário de Atendimento</h4>
+                        <p style="opacity: 0.8;">Segunda a sexta: 09:00 - 17:00<br>Sábado: 09:00 - 13:00</p>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <h4 style="color: white; margin-bottom: 15px;">Encontre-nos</h4>
+                        <p style="opacity: 0.8;">Campus I do CEFET-MG<br>Prédio das Engenharias<br>Sala 215</p>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="contact-form">
+                    <form onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Seu Nome Completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Seu E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Seu Telefone (opcional)">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Sua Escola/Instituição (opcional)">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Assunto / Interesse</option>
+                                <option value="duvida">Dúvida Geral</option>
+                                <option value="equipe">Quero fazer parte da Equipe (Staff)</option>
+                                <option value="diretor">Quero ser Diretor de Comitê</option>
+                                <option value="delegado">Quero ser Delegado</option>
+                                <option value="escola">Parceria com minha Escola</option>
+                                <option value="workshop">Solicitar Workshop</option>
+                                <option value="consultoria">Solicitar Consultoria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Sua Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FAQ === -->
+    <section class="section-padding" style="background-color: var(--color-gray-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
+                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
+                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Como participar como delegado?
+                    </h4>
+                    <p style="color: #666;">Você pode se inscrever através do formulário de interesse ou entrar em contato conosco. Realizamos seleção anual para participantes.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
+                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
+                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Qual é o custo para participar?
+                    </h4>
+                    <p style="color: #666;">As simulações para alunos de escolas públicas são totalmente gratuitas. Workshops e consultorias têm valores específicos que compartilharemos sob demanda.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
+                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
+                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Como faço para levar o MOCS para minha escola?
+                    </h4>
+                    <p style="color: #666;">Entramos em contato com escolas interessadas para discutir parcerias. Podemos realizar workshops, mentorias ou simulações customizadas.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow-card);">
+                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
+                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Preciso ter conhecimento anterior em diplomacia?
+                    </h4>
+                    <p style="color: #666;">Não! O MOCS acolhe participantes de todos os níveis. Oferecemos treinamento completo para iniciantes.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: var(--shadow-card);">
+                    <h4 style="color: var(--color-blue); margin-bottom: 10px;">
+                        <i class="bi bi-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i> Como posso ser voluntário ou estagiário?
+                    </h4>
+                    <p style="color: #666;">Procure pela aba "Equipe" no site e manifeste interesse. Estamos sempre buscando novos talentos para ajudar na missão do MOCS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="color: var(--color-orange);">MOCS.</h4>
+                    <p>Modelo de Comitês Simulados do CEFET-MG.</p>
+                    <p>Desde 2010 formando líderes.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Edital 2025</a></li>
+                        <li><a href="#">Guia de Estudos</a></li>
+                        <li><a href="#">Regras de Procedimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MOCS CEFET-MG. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/sheets.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

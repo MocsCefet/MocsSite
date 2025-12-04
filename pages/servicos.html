@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - MOCS CEFET-MG</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- === HEADER === -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MOCS<span>.</span></a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="historia.html">História</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="servicos.html" class="active">Serviços</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- === HERO === -->
+    <section style="height: 60vh; background: linear-gradient(135deg, rgba(32, 83, 149, 0.9), rgba(21, 58, 106, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; text-align: center; color: white; padding-top: 80px; margin-bottom: 60px;">
+        <div class="container">
+            <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Serviços</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Soluções educacionais para transformar sua escola</p>
+        </div>
+    </section>
+
+    <!-- === SERVIÇOS === -->
+    <section id="servicos-section" class="section-padding page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Oferecemos</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+                <!-- Serviço 1 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: white; padding: 40px; border-radius: 10px; box-shadow: var(--shadow-card);">
+                    <div>
+                        <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                            <i class="bi bi-globe-americas" style="font-size: 2rem; margin-right: 10px;"></i> Simulações (MUNs)
+                        </h3>
+                        <p style="color: #666; margin-bottom: 15px;">Organizamos simulações completas de Modelos das Nações Unidas, desde a preparação acadêmica até a execução do evento.</p>
+                        <p style="color: #666; margin-bottom: 15px;"><strong>Inclui:</strong> Treinamento de delegados, preparação de posicionamentos, mediação de debates e avaliação de desempenho.</p>
+                        <a href="contato.html" class="btn btn-primary" style="margin-top: 15px;">Solicitar Cotação</a>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Simulações" style="border-radius: 10px;">
+                    </div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--color-gray-light); padding: 40px; border-radius: 10px;">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1475721027767-p753c96d996c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Workshops" style="border-radius: 10px;">
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                            <i class="bi bi-easel-fill" style="font-size: 2rem; margin-right: 10px;"></i> Workshops
+                        </h3>
+                        <p style="color: #666; margin-bottom: 15px;">Oferecemos oficinas temáticas sobre oratória, negociação diplomática e regras de procedimento das Nações Unidas.</p>
+                        <p style="color: #666; margin-bottom: 15px;"><strong>Temas:</strong> Comunicação efetiva, persuasão, geopolítica, história, legislação internacional.</p>
+                        <a href="contato.html" class="btn btn-primary" style="margin-top: 15px;">Agendar Workshop</a>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: white; padding: 40px; border-radius: 10px; box-shadow: var(--shadow-card);">
+                    <div>
+                        <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                            <i class="bi bi-person-video3" style="font-size: 2rem; margin-right: 10px;"></i> Mentorias
+                        </h3>
+                        <p style="color: #666; margin-bottom: 15px;">Acompanhamento individualizado para grêmios estudantis e clubes de Relações Internacionais em formação.</p>
+                        <p style="color: #666; margin-bottom: 15px;"><strong>Inclui:</strong> Orientação estratégica, consultoria em eventos, desenvolvimento de lideranças, networking.</p>
+                        <a href="contato.html" class="btn btn-primary" style="margin-top: 15px;">Começar Mentoria</a>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mentorias" style="border-radius: 10px;">
+                    </div>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--color-gray-light); padding: 40px; border-radius: 10px;">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Consultorias" style="border-radius: 10px;">
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-orange); margin-bottom: 20px;">
+                            <i class="bi bi-briefcase" style="font-size: 2rem; margin-right: 10px;"></i> Consultorias Estratégicas
+                        </h3>
+                        <p style="color: #666; margin-bottom: 15px;">Análise e consultoria para instituições que desejam implementar programas de educação diplomática.</p>
+                        <p style="color: #666; margin-bottom: 15px;"><strong>Serviços:</strong> Diagnóstico institucional, design de currículo, treinamento de educadores.</p>
+                        <a href="contato.html" class="btn btn-primary" style="margin-top: 15px;">Solicitar Consultoria</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === CTA === -->
+    <section class="section-padding" style="background: linear-gradient(to right, var(--color-blue), var(--color-blue-dark)); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px;">Pronto para Levar Diplomacia à Sua Escola?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">Entre em contato conosco para discussões e orçamentos.</p>
+            <a href="contato.html" class="btn btn-outline">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="color: var(--color-orange);">MOCS.</h4>
+                    <p>Modelo de Comitês Simulados do CEFET-MG.</p>
+                    <p>Desde 2010 formando líderes.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Edital 2025</a></li>
+                        <li><a href="#">Guia de Estudos</a></li>
+                        <li><a href="#">Regras de Procedimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MOCS CEFET-MG. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/sheets.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

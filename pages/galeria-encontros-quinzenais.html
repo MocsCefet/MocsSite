@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria — Encontros Quinzenais - MOCS CEFET-MG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modern-effects.css">
+    <link rel="stylesheet" href="../css/advanced.css">
+
+    <style>
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-2xl); }
+        .photo { background: #dbeafe; height: 220px; border-radius: var(--radius-md); display:flex; align-items:center; justify-content:center; color: #334155; font-weight:700; }
+        @media (max-width:600px) { .photo { height: 160px; } }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <section class="hero" style="margin-top:80px; min-height:30vh; padding:3rem 0;">
+        <div class="hero-content"><h1>Encontros Quinzenais</h1><p>Fotos de nossas reuniões regulares.</p></div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <a class="btn btn-outline" href="galeria.html">← Voltar para Galeria</a>
+            <div class="gallery-grid">
+                <div class="photo">Foto A</div>
+                <div class="photo">Foto B</div>
+                <div class="photo">Foto C</div>
+                <div class="photo">Foto D</div>
+                <div class="photo">Foto E</div>
+                <div class="photo">Foto F</div>
+                <div class="photo">Foto G</div>
+                <div class="photo">Foto H</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/sheets.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

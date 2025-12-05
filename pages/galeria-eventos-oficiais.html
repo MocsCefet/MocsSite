@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria — Eventos Oficiais - MOCS CEFET-MG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modern-effects.css">
+    <link rel="stylesheet" href="../css/advanced.css">
+
+    <style>
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-2xl); }
+        .photo { background: #f5d5d5; height: 220px; border-radius: var(--radius-md); display:flex; align-items:center; justify-content:center; color: #334155; font-weight:700; }
+        @media (max-width:600px) { .photo { height: 160px; } }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <section class="hero" style="margin-top:80px; min-height:30vh; padding:3rem 0;">
+        <div class="hero-content"><h1>Eventos Oficiais</h1><p>Registros de edições do MOCS, MUNs e cerimônias.</p></div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <a class="btn btn-outline" href="galeria.html">← Voltar para Galeria</a>
+            <div class="gallery-grid">
+                <div class="photo">Foto I</div>
+                <div class="photo">Foto J</div>
+                <div class="photo">Foto K</div>
+                <div class="photo">Foto L</div>
+                <div class="photo">Foto M</div>
+                <div class="photo">Foto N</div>
+                <div class="photo">Foto O</div>
+                <div class="photo">Foto P</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/sheets.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

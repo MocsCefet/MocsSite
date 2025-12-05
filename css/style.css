@@ -159,7 +159,7 @@ code {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--primary));
+    background: var(--accent);
     border-radius: 2px;
     box-shadow: 0 0 20px rgba(255, 117, 31, 0.4);
 }
@@ -252,12 +252,53 @@ nav a::after {
 nav a:hover::after,
 nav a.active::after {
     width: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--primary));
+    background: var(--accent);
 }
 
 nav a:hover {
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+nav a.active {
+    color: var(--accent);
+}
+
+/* Dropdown menu for gallery */
+.nav-item { position: relative; }
+.nav-item .dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+    padding: 0.5rem 0;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
+    z-index: 1100;
+}
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.nav-item .dropdown li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #24303f;
+    white-space: nowrap;
+    font-weight: 500;
+}
+.nav-item .dropdown li a:hover {
+    background: linear-gradient(90deg, rgba(255,117,31,0.06), rgba(255,117,31,0.02));
+    color: var(--accent);
 }
 
 .nav-toggle {

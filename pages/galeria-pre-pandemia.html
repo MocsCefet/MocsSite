@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria — Pré-Pandemia - MOCS CEFET-MG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modern-effects.css">
+    <link rel="stylesheet" href="../css/advanced.css">
+
+    <style>
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-2xl); }
+        .photo { background: #e2e8f0; height: 220px; border-radius: var(--radius-md); display:flex; align-items:center; justify-content:center; color: #64748b; font-weight:700; }
+        @media (max-width:600px) { .photo { height: 160px; } }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <section class="hero" style="margin-top:80px; min-height:30vh; padding:3rem 0;">
+        <div class="hero-content"><h1>Pré-Pandemia</h1><p>Fotos do período anterior a 2020.</p></div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <a class="btn btn-outline" href="galeria.html">← Voltar para Galeria</a>
+            <div class="gallery-grid">
+                <div class="photo">Foto 1</div>
+                <div class="photo">Foto 2</div>
+                <div class="photo">Foto 3</div>
+                <div class="photo">Foto 4</div>
+                <div class="photo">Foto 5</div>
+                <div class="photo">Foto 6</div>
+                <div class="photo">Foto 7</div>
+                <div class="photo">Foto 8</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/sheets.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
